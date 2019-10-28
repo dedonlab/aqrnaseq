@@ -1,4 +1,4 @@
-## step1. read input file.
+## Read input file.
 ## creates a dict with seqID as key and tRNAs and eVal, start, end as subdict(s)
 ## store lowest eVal for each seqID subdict under 'besteVal' key
 import time
@@ -28,7 +28,7 @@ def createdict(filename):
         eVal = float(fin[row][10])
         bScore = float(fin[row][11])+float(fin[row][23])
 
-        #does masterdict already have seqID as key???
+        #check if masterdict already has seqID as key
         if masterdict.has_key(seqID):
             #check if current eVal is smaller than besteVal
             if eVal < masterdict[seqID]['besteVal']: #eVal is smaller, discard existing tRNA
